@@ -1,0 +1,20 @@
+
+//Finding binary value for decimal number
+
+#include <iostream>
+using namespace std;
+int binaryval(int m)
+{
+    if(m==0) return 0;
+    else
+    {
+        binaryval(m/2);
+        cout<<m%2;
+    }
+}
+int main() {
+	int n;
+	cin>>n;
+	binaryval(n);
+	return 0;
+}
