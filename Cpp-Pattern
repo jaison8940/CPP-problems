@@ -1,0 +1,87 @@
+/* Pattern Printing - X 
+Pattern with Asterisk Accept a number N as the input. The program must print the X pattern as shown in the Example Input/Output Section as the output.  
+Boundary Condition(s): 
+2 <= N <= 50 
+Input Format: 
+The first line contains the value of N. 
+Output Format: 
+The list of lines contain the desired pattern. 
+
+Example 
+Input/Output 1: 
+Input: 4 
+Output: 
+1*****1 
+*2***2* 
+**3*3** 
+***4*** 
+**3*3** 
+*2***2* 
+1*****1 
+Example Input/Output 2: 
+Input: 5 
+Output: 
+1*******1 
+*2*****2* 
+**3***3** 
+***4*4*** 
+****5**** 
+***4*4*** 
+**3***3** 
+*2*****2* 
+1*******1 
+
+*/
+#include <iostream>
+
+#include<stdlib.h>
+
+using namespace std;
+
+int n,c=1,j=0;
+
+void getpattern(int s,int e,int count,int itr)
+
+{
+    
+for(int i=0;i<n*2-1;i++)
+    
+if(s==i) 
+cout<<count;
+        
+else if (e==i) 
+cout<<count;
+        
+else  
+cout<<"*";
+        
+cout<<"\n";
+        
+if(itr<(n*2-1)/2) 
+count++;
+        
+else 
+count--;
+        
+itr++;
+        
+if(itr>=(n*2-1)) 
+exit(0);
+        
+else getpattern(s+1,e-1,count,itr);
+    
+}
+
+
+int main(int argc, char** argv)
+
+{
+
+int n,i;
+
+cin>>n;
+
+getpattern(0,n*2-2,c,j);
+
+
+}
